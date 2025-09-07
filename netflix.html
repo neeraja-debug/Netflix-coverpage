@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <style>
+        body {
+            background-image: url("./images/the_netflix_login_background__canada__2024___by_logofeveryt_dh0w8qv-pre.jpg");
+            background-size: cover;
+            height: 100vh;
+        }
+
+        .shade {
+            background-color: rgba(0, 0, 0, 0.6);
+            height: 100vh;
+        }
+
+        .brand-title {
+            font-size: 50px;
+            font-family: Arial;
+            font-weight: bold;
+            color: red;
+            text-shadow: 1px 1px 1px white;
+        }
+
+        .section-title {
+            font-family: Arial;
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        section {
+            padding-top: 80px;
+        }
+    </style>
+
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <!-- React Library -->
+    <script src="../node_modules/react/umd/react.development.js"></script>
+    <script src="../node_modules/react-dom/umd/react-dom.development.js"></script>
+    <script src="../node_modules/@babel/standalone/babel.js"></script>
+    <script type="text/babel">
+
+        function NetflixIndex() {
+            return (
+                <div className="shade">
+                    <NetflixHeader />
+                    <NetflixSection />
+                </div>
+            )
+        }
+        function NetflixHeader() {
+            return (
+                <header className="p-4 d-flex align-items-center  justify-content-between">
+                    <div className="brand-title">
+                        Netflix
+                    </div>
+                    <div>
+                        <div className="d-flex">
+                            <div className="input-group">
+                                <span className="bi input-group-text bi-translate"></span>
+                                <select className="form-select">
+                                <option>Languages</option>
+                                </select>
+                            </div>
+                            <button data-bs-target="#login" data-bs-toggle="modal" className="btn mx-3 btn-danger">Signin</button>
+                            <div className="modal fade" id="login">
+                                <div className="modal-dialog">
+                                    <div className="modal-content">
+                                        <div className="modal-header">
+                                            <h3>User Login</h3>
+                                            <button className="btn btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div className="modal-body">
+                                            <dl>
+                                                <dt>
+                                                    User Name
+                                                </dt>
+                                                <dd><input type="text" className="form-control" /></dd>
+
+                                                <dt>
+                                                    Password
+                                                </dt>
+                                                <dd><input type="text" className="form-control" /></dd>
+                                            </dl>
+                                        </div>
+                                        <div className="modal-footer">
+                                            <button className="btn btn-warning">Login</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </header>
+            )
+        }
+        function NetflixSection() {
+            return (
+                <section className="text-white text-center">
+
+                    <div className="section-title">
+                        Unlimited movies, TV <br /> shows and more
+                    </div>
+
+                    <div className="section-subtitle">
+                        Starts at &#8377;149.Cancel at any time.
+                    </div>
+                    <NetflixMain />
+                </section>
+            )
+        }
+        function NetflixMain() {
+            return (
+                <main>
+                    <p>Ready to watch? Enter your email to create or restart your membership.</p>
+                    <div className="d-flex justify-content-center">
+                        <div>
+                            <div className="input-group input-group-lg">
+                                <input className="form-control" type="email" placeholder="your email address"></input>
+                                <button className="btn mx-2 btn-danger">Get Started <span className="bi bi-chevron-right"></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            )
+        }
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<NetflixIndex />);
+    </script>
+
+</head>
+
+<body>
+    <noscript>please enable javascript on your browser</noscript>
+    <div id="root"></div>
+</body>
+
+</html>
